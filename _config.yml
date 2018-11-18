@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Bootstrap 4 Github Pages
-email: ""
+title: Home Tech Bits
+email: "ravendog@hotmail.com"
 description: >- # this means to ignore newlines until "baseurl:"
   A Bootstrap 4 start up project for Jekyll and Github Pages
 #baseurl: "" # the subpath of your site, e.g. /blog
@@ -31,6 +31,9 @@ plugins:
 
 # A list of the pages to display in the navigation bar
 header_pages:
+  - dkb.md
+  - scripts.md
+  - archive.md
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

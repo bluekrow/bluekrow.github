@@ -1,0 +1,25 @@
+{
+  "name": "bluekrow.github.io",
+  "version": "1.0.0",
+  "description": "npm for bluekrow.github.io site",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "popper.js": "^1.14.5",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluekrow/bluekrow.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bluekrow/bluekrow.github.io/issues"
+  },
+  "homepage": "https://github.com/bluekrow/bluekrow.github.io#readme"
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+{%- include head.html -%}
+
+<body>
+
+    <div class="py-5">
+
+      <div class="container page-content">
+          {{ content }}
+          <div class="card border-primary mb-3">  
+              <div class="card-header">Test Logs</div>
+              <div class="card-body">
+                <h4 class="card-title">site.data.navigation.active_pages</h4>  
+                {%- assign actPages = site.data.navigation.active_pages -%}
+                {%- for actPage in actPages -%}
+                  Type: {{actPage.type}} </br>
+                  Path: {{actPage.path}} </br>
+                  Link: {{actPage.link}} </br>
+                  {%- if actPage.subpages -%}
+                    {%- for subPage in actPage.subpages -%}
+                      --Type: {{subPage.type}} </br>
+                      --Path: {{subPage.path}} </br>
+                      --Link: {{subPage.link}} </br>
+                      </br>
+                    {%- endfor -%}
+                  {%- endif -%}
+                </br>  
+                {%- endfor -%}
+
+                <h4 class="card-title">site.pages</h4>  
+                {%- assign pages = site.pages -%}
+                {%- for pg in pages -%}
+                  {%- if pg.title -%}
+                    Path: {{pg.path}} </br>
+                    Title: {{pg.title}} </br>
+                    Url: {{pg.url}} </br>
+                    </br>
+                  {%- endif -%}
+                {%- endfor -%}
+
+              </div>
+          </div>
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

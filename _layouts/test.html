@@ -15,6 +15,15 @@
                 <h4 class="card-title">site.data.navigation.active_pages</h4>  
                 {%- assign actPages = site.data.navigation.active_pages -%}
                 {%- for actPage in actPages -%}
+                  {%- assign selPage = site.pages | where_exp:"item", "item.path contains actPage.path" | first -%}
+                  Sel Path: {{selPage.path}}</br>
+                  Act page: {{actPage.path}}</br>
+                  </br>
+                {%- endfor -%}
+  
+                <h4 class="card-title">site.data.navigation.active_pages</h4>  
+                {%- assign actPages = site.data.navigation.active_pages -%}
+                {%- for actPage in actPages -%}
                   Type: {{actPage.type}} </br>
                   Path: {{actPage.path}} </br>
                   Link: {{actPage.link}} </br>

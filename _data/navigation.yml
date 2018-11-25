@@ -1,16 +1,18 @@
-active_pages:
+nodes:
   - type: path
     path: dkb.md
   - type: path
     path: scripts.md
   - type: path
     path: archive.md
-  - type: path
-    path: about.md
-    subpages:
+  - type: nodelist
+    title: About
+    subnodes:
+      - type: path
+        path: about.md
       - type: path
         path: archive.md
       - type: separator
       - type: link
-        link: https://bluekrow.github.io
         title: GitHub Repo
+        link: https://bluekrow.github.io

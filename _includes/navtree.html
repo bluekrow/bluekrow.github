@@ -1,0 +1,21 @@
+
+{% comment %}
+Important Note: This sub nav tree, only works for two levels, as the 2nd level 
+has different implementation (dropdown) than the first level (navbar).
+{% endcomment %}
+{% for node in include.nodes %}
+  {% case node.type %}
+    {% when 'nodelist' %}
+      NodeList:
+      {% include navtree.html nodes=node.subnodes %}
+    {% when 'separator' %}
+      Separator
+    {% when 'link' %}
+      Link: {{node.link}}
+    {% when 'path' %}
+      {% assign selPage = site.pages | where_exp:"item", "item.path contains node.path" | first %}
+      Path: {{node.path}}
+    {% else %}
+      else
+  {% endcase %}
+{% endfor %}

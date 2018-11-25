@@ -4,6 +4,22 @@
 {%- include head.html -%}
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+
+      {%- assign navnodes = site.data.navigation.nodes -%}
+      {%- assign navLevel = 0 -%}
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            {%- include navtree.html nodes=navnodes level=navLevel -%}
+        </ul>
+    </div>
+  </nav>
 
     <div class="py-5">
 
@@ -12,10 +28,11 @@
           <div class="card border-primary mb-3">  
               <div class="card-header">Test Logs</div>
               <div class="card-body">
+                {% comment %}
                 {%- assign navnodes = site.data.navigation.nodes -%}
                 <h4 class="card-title">Nav tree content</h4>  
                 {% include navtree.html nodes=navnodes %}
-                
+                {% endcomment%}
                 <h4 class="card-title">site.data.navigation.nodes</h4>  
                 {%- assign actPages = site.data.navigation.nodes -%}
                 {%- for actPage in actPages -%}

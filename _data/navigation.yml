@@ -1,18 +1,23 @@
 nodes:
   - type: path
     path: dkb.md
+    defaultTitle: DKB
   - type: path
     path: scripts.md
+    defaultTitle: Scripts
   - type: path
-    path: archive.md
+    path: references.md
+    defaultTitle: References
   - type: nodelist
-    title: About
+    title: More
     subnodes:
       - type: path
-        path: about.md
-      - type: path
         path: archive.md
-      - type: separator
+        defaultTitle: Archive
       - type: link
         title: GitHub Repo
-        link: https://bluekrow.github.io
+        link: https://github.com/bluekrow/bluekrow.github.io
+      - type: separator
+      - type: path
+        path: about.md
+        defaultTitle: About

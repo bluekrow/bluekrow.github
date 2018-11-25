@@ -1,21 +1,53 @@
 
-{% comment %}
-Important Note: This sub nav tree, only works for two levels, as the 2nd level 
-has different implementation (dropdown) than the first level (navbar).
-{% endcomment %}
-{% for node in include.nodes %}
-  {% case node.type %}
-    {% when 'nodelist' %}
-      NodeList:
-      {% include navtree.html nodes=node.subnodes %}
-    {% when 'separator' %}
-      Separator
-    {% when 'link' %}
-      Link: {{node.link}}
-    {% when 'path' %}
-      {% assign selPage = site.pages | where_exp:"item", "item.path contains node.path" | first %}
-      Path: {{node.path}}
-    {% else %}
-      else
-  {% endcase %}
-{% endfor %}
+{%- comment -%}
+Important Note: This sub nav tree, only works for two levels (hardcoded), as the 2nd level 
+has different implementation (dropdown) than the first level (navbar). 
+First level is 0, second level is 1, and so on.
+{%- endcomment -%}
+{%- assign navLevel = include.level | plus: 1 -%}
+
+{%- for node in include.nodes -%}
+  {%- if navLevel == 1 -%}
+    {%- case node.type -%}
+      {%- when 'nodelist' -%}
+        <li class="nav-item dropdown"/>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{node.title}}</a>
+        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
+          {%- include navtree.html nodes=node.subnodes level=navLevel -%}
+        </div>  
+      {%- when 'separator' -%}
+        NOT_IMPLEMENTED
+      {%- when 'link' -%}
+        Link: {{node.link}}
+      {%- when 'path' -%}
+        {%- assign selectedPage = site.pages | where_exp:"item", "item.path contains node.path" | first -%}
+        <li class="nav-item">
+          {%- if selectedPage.title -%}
+            <a class="nav-link" href="{{ selectedPage.url | relative_url }}">{{ selectedPage.title | escape }}</a>
+          {%- else -%}
+            <a class="nav-link disabled" href="#">{{ node.defaultTitle }}</a>
+          {%- endif -%}
+        </li>
+      {%- else -%}
+        NOT_IMPLEMENTED
+    {%- endcase -%}
+  {%- endif -%}
+  {%- if navLevel > 1 -%}
+    {%- case node.type -%}
+      {%- when 'nodelist' -%}
+      {%- when 'separator' -%}
+        <div class="dropdown-divider"></div>
+      {%- when 'link' -%}
+        <a class="dropdown-item" href="{{ node.link }}">{{ node.title }}</a>
+      {%- when 'path' -%}
+        {%- assign selectedPage = site.pages | where_exp:"item", "item.path contains node.path" | first -%}
+        {%- if selectedPage.title -%}
+          <a class="dropdown-item" href="{{ selectedPage.url | relative_url }}">{{ selectedPage.title | escape }}</a>
+        {%- else -%}
+          <a class="dropdown-item disabled" href="#">{{ node.defaultTitle }}</a>
+        {%- endif -%}
+      {%- else -%}
+        NOT_IMPLEMENTED
+    {%- endcase -%}
+  {%- endif -%}
+{%- endfor -%}

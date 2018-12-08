@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: homegrey
 title: Home Tech Bits
 ---
 

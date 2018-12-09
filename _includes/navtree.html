@@ -9,11 +9,11 @@ First level is 0, second level is 1, and so on.
 {%- for node in include.nodes -%}
   {%- if navLevel == 1 -%}
     {%- case node.type -%}
-      {%- when 'nodelist' -%}
-        <li class="nav-item dropdown"/>
+      {%- when 'nodelist' -%}       
+        <li class="nav-item {{include.location}}" />
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{node.title}}</a>
         <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
-          {%- include navtree.html nodes=node.subnodes level=navLevel -%}
+          {%- include navtree.html nodes=node.subnodes level=navLevel location="dropdown" -%}
         </div>  
       {%- when 'separator' -%}
         NOT_IMPLEMENTED

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>The Big Picture - Start Bootstrap Template</title>
+    <title>The Techie Within</title>
     {%- seo -%}
     <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
     {%- feed_meta -%}
@@ -17,7 +17,7 @@
 
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-bg fixed-bottom">
       <div class="container">
         <a class="navbar-brand" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
     
@@ -37,10 +37,11 @@
     <!-- Page Content -->
     <section>
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
+        <div class="row justify-content-end">
+          <div class="col-lg-6 text-right">
             <h1 class="mt-5">{{ site.title | escape }}</h1>
-            {{ content }}
+            {{ content }} 
+            {{ site.description }} 
           </div>
         </div>
       </div>

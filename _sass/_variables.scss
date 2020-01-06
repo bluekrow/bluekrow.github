@@ -101,6 +101,10 @@ $navbar-padding-y:                  0.25rem !default;
 $navbar-dark-color:                 rgba($white,.75) !default;
 $navbar-dark-hover-color:           $white !default;
 
+.navbar-bg {
+    background-color:               rgba($white,.25); 
+}
+
 // Pagination
 
 $pagination-color:                  $white !default;

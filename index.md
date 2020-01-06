@@ -1,6 +1,6 @@
 ---
 layout: homegrey
-title: Home Tech Bits
+title: The Techie Within
 ---
 
-__Home Tech Bits, a place to store the bits on my digital life__
+__A place to store any relevant knowledge bits__

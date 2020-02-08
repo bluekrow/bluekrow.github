@@ -1,7 +1,7 @@
 nodes:
   - type: path
-    path: dkb.md
-    defaultTitle: DKB
+    path: blog.md
+    defaultTitle: Blog
   - type: path
     path: scripts.md
     defaultTitle: Scripts

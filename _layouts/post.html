@@ -47,10 +47,10 @@ layout: default
     <p class="text-muted">
       <time datetime="{{ page.date | date_to_xmlschema }}">
         {%- assign date_format = "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
+        On {{ page.date | date: date_format }}
       </time>
       {%- if page.author -%}
-        • {{ page.author }}
+        • by {{ page.author }}
       {%- endif -%}
     </p>
   </p>

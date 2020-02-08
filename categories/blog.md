@@ -1,6 +1,6 @@
 ---
 layout: page
-title: DKB
+title: Bits Blog
 ---
 
 ### Development Knowledge Base

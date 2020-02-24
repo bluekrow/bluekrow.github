@@ -34,7 +34,10 @@ plugins:
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
+  - .bundle
+  - .gems-cache
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - update_boostrap.sh
+  - run_boostrap_update.sh
+  - run_jekyll_server.sh

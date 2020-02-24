@@ -36,8 +36,15 @@ plugins:
 exclude:
   - .bundle
   - .gems-cache
+  - .gitignore
+  - .jekyll_cache
+  - .travis.yml
   - Gemfile
   - Gemfile.lock
   - node_modules
+  - package-lock.json
+  - package.json
   - run_boostrap_update.sh
+  - run_jekyll_container.sh
   - run_jekyll_server.sh
+  - tmp

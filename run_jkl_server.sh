@@ -5,5 +5,5 @@ sudo docker run \
     --rm -it \
     -v "$PWD":/jkl-site \
     -p 80:4000 \
-    jkl-img \
+    bluekrow/nke-tools-jekyll:1.1 \
     jkl-serve

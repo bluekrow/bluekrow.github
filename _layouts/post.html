@@ -16,44 +16,21 @@ layout: default
     </p>
   </header>
 
-  <section>
-    {{ content }}
-  </section>
-
-</article>
-
-
-<div class="card border-info mb-3" style="max-width: 20rem;">
-  <div class="card-header">{{ page.title | escape }}</div>
-  <div class="card-body">
-    <h4 class="card-title">
+  <div class="jumbotron">
+    <h1 class="display-3">{{ page.title | escape }}</h1>
+    <p class="lead">
       <p class="text-muted">
         <time datetime="{{ page.date | date_to_xmlschema }}">
           {%- assign date_format = "%b %-d, %Y" -%}
-          {{ page.date | date: date_format }}
+          On {{ page.date | date: date_format }}
         </time>
         {%- if page.author -%}
-          • {{ page.author }}
+          • by {{ page.author }}
         {%- endif -%}
       </p>
-    </h4>
-    <p class="card-text">{{ content }}</p>
-  </div>
-</div>
-
-<div class="jumbotron">
-  <h1 class="display-3">{{ page.title | escape }}</h1>
-  <p class="lead">
-    <p class="text-muted">
-      <time datetime="{{ page.date | date_to_xmlschema }}">
-        {%- assign date_format = "%b %-d, %Y" -%}
-        On {{ page.date | date: date_format }}
-      </time>
-      {%- if page.author -%}
-        • by {{ page.author }}
-      {%- endif -%}
     </p>
-  </p>
-  <hr class="my-4">
-  <p>{{ content }}</p>
-</div>
+    <hr class="my-4">
+    <p>{{ content }}</p>
+  </div>
+
+</article>
